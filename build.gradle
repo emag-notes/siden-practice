@@ -1,8 +1,15 @@
-apply plugin: 'java'
+plugins {
+  id 'java'
+  id "us.kirchmeier.capsule" version "0.9.0"
+}
 
 sourceCompatibility = targetCompatibility = 1.8
 
 version = '1.0'
+
+ext {
+  expectedGradleVersion = "2.1"
+}
 
 repositories {
   mavenCentral()
@@ -11,4 +18,12 @@ repositories {
 
 dependencies {
   compile 'ninja.siden:siden-core:0.0.1'
+}
+
+task fatCapsule(type: FatCapsule) {
+  applicationClass 'sidenpractice.Main'
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = expectedGradleVersion
 }
