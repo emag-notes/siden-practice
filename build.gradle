@@ -18,6 +18,7 @@ repositories {
 
 dependencies {
   compile 'ninja.siden:siden-core:0.0.1'
+  compile 'io.fastjson:boon:0.28'
 }
 
 task fatCapsule(type: FatCapsule) {
