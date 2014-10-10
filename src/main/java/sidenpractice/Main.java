@@ -28,7 +28,7 @@ public class Main {
     app.get("/402", (req, res) -> 402);
     app.get("/payment", (req, res) -> res.status(402));
 
-    // json `curl -H "Accept: application/json" localhost:18080/users`
+    // json marshalling
     app.get("/users", (req, res) -> new User(1, "User1"))
       .render(Renderer.of(JsonFactory::toJson))
       .type("application/json");
